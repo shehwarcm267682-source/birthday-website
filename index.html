@@ -1,0 +1,576 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A Little Something For You ♡</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Caveat:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --cream: #fff9f4;
+    --pink: #f5dce0;
+    --rose: #bd7886;
+    --dark: #573c46;
+    --muted: #997b80;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: var(--cream);
+    color: var(--dark);
+    font-family: 'DM Sans', sans-serif;
+    overflow-x: hidden;
+}
+
+/* BACKGROUND */
+
+.hero {
+    min-height: 100vh;
+    min-height: 100svh;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 90px 20px 65px;
+    overflow: hidden;
+    background:
+        radial-gradient(ellipse at 50% 40%, #fffdfb 0%, #fff5f1 48%, #f8e5e5 100%);
+}
+
+/* NAVIGATION */
+
+nav {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    padding: 28px 7%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 5;
+}
+
+.logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 19px;
+    letter-spacing: 1px;
+    color: var(--dark);
+}
+
+.logo span {
+    color: var(--rose);
+}
+
+/* DECORATIVE ELEMENTS */
+
+.glow {
+    position: absolute;
+    width: 350px;
+    height: 350px;
+    border-radius: 50%;
+    background: #f2cbd2;
+    filter: blur(100px);
+    opacity: 0.4;
+    pointer-events: none;
+}
+
+.glow.one {
+    top: 10%;
+    left: -180px;
+}
+
+.glow.two {
+    bottom: 0;
+    right: -180px;
+    background: #e9c5cf;
+}
+
+.heart {
+    position: absolute;
+    color: #d99ba7;
+    opacity: 0.55;
+    animation: float 5s ease-in-out infinite;
+    pointer-events: none;
+}
+
+.heart.h1 {
+    top: 23%;
+    left: 14%;
+    font-size: 25px;
+}
+
+.heart.h2 {
+    top: 35%;
+    right: 13%;
+    font-size: 17px;
+    animation-delay: 1s;
+}
+
+.heart.h3 {
+    bottom: 20%;
+    left: 20%;
+    font-size: 15px;
+    animation-delay: 2s;
+}
+
+.heart.h4 {
+    bottom: 25%;
+    right: 19%;
+    font-size: 27px;
+    animation-delay: 1.5s;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0) rotate(-8deg); }
+    50% { transform: translateY(-18px) rotate(8deg); }
+}
+
+/* HERO CONTENT */
+
+.content {
+    position: relative;
+    z-index: 2;
+    max-width: 780px;
+    animation: appear 1.3s ease both;
+}
+
+.eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: var(--rose);
+    margin-bottom: 25px;
+}
+
+.eyebrow::before,
+.eyebrow::after {
+    content: "";
+    width: 25px;
+    height: 1px;
+    background: #d9a9b0;
+}
+
+h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(45px, 7vw, 83px);
+    font-weight: 400;
+    line-height: 1.14;
+    color: #64454e;
+    margin-bottom: 13px;
+}
+
+h1 em {
+    color: #bd7886;
+    font-weight: 400;
+}
+
+.subtitle {
+    font-family: 'Caveat', cursive;
+    font-size: clamp(23px, 3vw, 30px);
+    color: #ae7b84;
+    margin-bottom: 22px;
+}
+
+.description {
+    max-width: 480px;
+    margin: 0 auto;
+    color: #967b80;
+    font-size: 14px;
+    line-height: 2;
+}
+
+/* CAKE */
+
+.cake-area {
+    margin: 35px auto 32px;
+    position: relative;
+    width: 210px;
+    height: 170px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.cake {
+    position: relative;
+    width: 150px;
+    height: 85px;
+    background: linear-gradient(135deg, #e9b8b9, #d997a3);
+    border-radius: 12px 12px 18px 18px;
+    box-shadow: 0 12px 25px #b87c862b;
+}
+
+.cake::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 23px;
+    background: #fff1e8;
+    border-radius: 12px 12px 50% 50%;
+}
+
+.cake::after {
+    content: "";
+    position: absolute;
+    top: 22px;
+    left: 0;
+    width: 100%;
+    height: 9px;
+    background: #fff0e9;
+    border-radius: 50%;
+}
+
+.cake-base {
+    position: absolute;
+    bottom: -9px;
+    left: -12px;
+    width: 174px;
+    height: 13px;
+    background: #c58b92;
+    border-radius: 50%;
+}
+
+.candle {
+    position: absolute;
+    width: 8px;
+    height: 38px;
+    background: repeating-linear-gradient(
+        45deg,
+        #fff8e8,
+        #fff8e8 4px,
+        #e7aab2 4px,
+        #e7aab2 8px
+    );
+    top: -38px;
+    left: 71px;
+    border-radius: 3px;
+}
+
+.flame {
+    position: absolute;
+    width: 13px;
+    height: 20px;
+    background: #ffc56b;
+    border-radius: 50% 50% 50% 50%;
+    top: -21px;
+    left: -2px;
+    transform-origin: bottom center;
+    animation: flicker 1s ease-in-out infinite alternate;
+    box-shadow: 0 0 20px #ffb94d, 0 0 35px #ffc66b;
+}
+
+@keyframes flicker {
+    from { transform: rotate(-8deg) scale(1); }
+    to { transform: rotate(8deg) scale(0.85); }
+}
+
+.cake-caption {
+    position: absolute;
+    bottom: -40px;
+    font-family: 'Caveat', cursive;
+    font-size: 20px;
+    color: #ae7b84;
+    width: 100%;
+}
+
+/* BUTTON */
+
+.surprise-btn {
+    margin-top: 13px;
+    padding: 16px 34px;
+    border: none;
+    border-radius: 50px;
+    background: #b97986;
+    color: white;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 13px;
+    letter-spacing: 0.6px;
+    cursor: pointer;
+    transition: 0.3s ease;
+    box-shadow: 0 8px 22px #b9798633;
+}
+
+.surprise-btn:hover {
+    background: #9e6372;
+    transform: translateY(-4px);
+    box-shadow: 0 12px 28px #b9798645;
+}
+
+.btn-heart {
+    margin-left: 9px;
+}
+
+/* BOTTOM MESSAGE */
+
+.bottom-note {
+    position: absolute;
+    bottom: 25px;
+    font-family: 'Caveat', cursive;
+    color: #b58c91;
+    font-size: 18px;
+    letter-spacing: 0.5px;
+}
+
+/* MODAL */
+
+.modal {
+    position: fixed;
+    inset: 0;
+    z-index: 20;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background: #3c2934a8;
+    backdrop-filter: blur(8px);
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.4s;
+}
+
+.modal.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal-card {
+    background: #fff9f4;
+    border: 1px solid #f0dce0;
+    border-radius: 20px;
+    padding: 48px 30px;
+    max-width: 430px;
+    width: 100%;
+    text-align: center;
+    transform: translateY(20px);
+    transition: 0.4s;
+}
+
+.modal.active .modal-card {
+    transform: translateY(0);
+}
+
+.modal-heart {
+    font-size: 34px;
+    color: #c17d8a;
+    margin-bottom: 18px;
+}
+
+.modal-card h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 31px;
+    font-weight: 400;
+    color: #694952;
+    margin-bottom: 15px;
+}
+
+.modal-card p {
+    font-size: 14px;
+    line-height: 1.9;
+    color: #997e83;
+}
+
+.close-btn {
+    margin-top: 25px;
+    background: transparent;
+    border: 1px solid #d8a7b0;
+    color: #a76e7c;
+    border-radius: 30px;
+    padding: 12px 27px;
+    cursor: pointer;
+    font-size: 12px;
+    transition: 0.3s;
+}
+
+.close-btn:hover {
+    background: #f4e0e3;
+}
+
+/* ANIMATION */
+
+@keyframes appear {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* MOBILE */
+
+@media(max-width: 600px) {
+    .hero {
+        padding-top: 100px;
+        padding-bottom: 75px;
+    }
+
+    nav {
+        padding: 22px;
+    }
+
+    .heart.h1 { left: 7%; top: 20%; }
+    .heart.h2 { right: 7%; top: 30%; }
+    .heart.h3 { left: 8%; bottom: 19%; }
+    .heart.h4 { right: 8%; bottom: 20%; }
+
+    .description {
+        font-size: 13px;
+        max-width: 330px;
+    }
+
+    .cake-area {
+        margin-top: 35px;
+        margin-bottom: 35px;
+    }
+
+    .bottom-note {
+        font-size: 16px;
+    }
+}
+
+@media(prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<section class="hero">
+
+    <nav>
+        <div class="logo">A Little Something <span>♡</span></div>
+    </nav>
+
+    <div class="glow one"></div>
+    <div class="glow two"></div>
+
+    <div class="heart h1">♡</div>
+    <div class="heart h2">✧</div>
+    <div class="heart h3">♡</div>
+    <div class="heart h4">✧</div>
+
+    <div class="content">
+
+        <div class="eyebrow">
+            A special day for someone special
+        </div>
+
+        <h1>
+            Happy Birthday,<br>
+            <em>My Favorite Person</em> ♡
+        </h1>
+
+        <div class="subtitle">
+            Today, the world celebrates you.
+        </div>
+
+        <p class="description">
+            I wanted to make something a little different
+            for you. Something filled with memories,
+            little surprises, and a few words from my heart.
+            Because someone as special as you deserves
+            something special too.
+        </p>
+
+        <div class="cake-area">
+
+            <div class="cake">
+                <div class="candle">
+                    <div class="flame"></div>
+                </div>
+                <div class="cake-base"></div>
+            </div>
+
+            <div class="cake-caption">
+                Make a wish, birthday star...
+            </div>
+
+        </div>
+
+        <button class="surprise-btn" onclick="openSurprise()">
+            Begin Your Little Surprise
+            <span class="btn-heart">♡</span>
+        </button>
+
+    </div>
+
+    <div class="bottom-note">
+        Made with a little extra love, just for you.
+    </div>
+
+</section>
+
+<!-- WELCOME POPUP -->
+
+<div class="modal" id="welcomeModal">
+
+    <div class="modal-card">
+
+        <div class="modal-heart">♡</div>
+
+        <h2>Well, hello birthday star!</h2>
+
+        <p>
+            Before you go any further, I just want you
+            to know that this little corner of the internet
+            was made especially for you.
+            <br><br>
+            So take your time, enjoy every little surprise,
+            and let me take you through a few moments
+            that mean a lot to me.
+        </p>
+
+        <button class="close-btn" onclick="closeSurprise()">
+            I can't wait ♡
+        </button>
+
+    </div>
+
+</div>
+
+<script>
+function openSurprise() {
+    window.location.href = "memories.html";
+}
+
+function closeSurprise() {
+    document.getElementById("welcomeModal").classList.remove("active");
+}
+
+// Close popup by clicking outside it
+document.getElementById("welcomeModal").addEventListener("click", function(e) {
+    if (e.target === this) {
+        closeSurprise();
+    }
+});
+</script>
+
+</body>
+</html>

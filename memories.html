@@ -1,0 +1,1150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Our Little Universe ♡</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Caveat:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --cream: #fff9f5;
+    --pink: #f7e6e5;
+    --rose: #bd7b89;
+    --dark: #60454d;
+    --muted: #a08488;
+    --line: #eedbdc;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: var(--cream);
+    color: var(--dark);
+    font-family: 'DM Sans', sans-serif;
+    overflow-x: hidden;
+}
+
+/* SCROLL PROGRESS */
+
+.progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 3px;
+    background: var(--rose);
+    z-index: 100;
+}
+
+/* NAVIGATION */
+
+nav {
+    height: 75px;
+    padding: 0 7%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: rgba(255,249,245,0.88);
+    backdrop-filter: blur(12px);
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    border-bottom: 1px solid #f2e6e4;
+}
+
+.logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 19px;
+    color: var(--dark);
+}
+
+.logo span {
+    color: var(--rose);
+}
+
+.nav-note {
+    font-family: 'Caveat', cursive;
+    font-size: 20px;
+    color: var(--rose);
+}
+
+/* COMMON */
+
+section {
+    padding: 95px 7%;
+}
+
+.section-label {
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-size: 10px;
+    color: var(--rose);
+    margin-bottom: 17px;
+}
+
+.section-heading {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(34px, 5vw, 52px);
+    font-weight: 400;
+    line-height: 1.25;
+    color: var(--dark);
+}
+
+.section-heading em {
+    color: var(--rose);
+}
+
+.section-description {
+    max-width: 510px;
+    color: var(--muted);
+    line-height: 1.9;
+    font-size: 14px;
+    margin-top: 17px;
+}
+
+/* INTRO */
+
+.intro {
+    min-height: 510px;
+    background:
+        radial-gradient(ellipse at 50% 40%, #fffdfb, #f9e8e7);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.intro::before,
+.intro::after {
+    content: "✧";
+    position: absolute;
+    color: #d9a9b1;
+    font-size: 38px;
+    opacity: .6;
+}
+
+.intro::before {
+    left: 12%;
+    top: 23%;
+}
+
+.intro::after {
+    right: 13%;
+    bottom: 20%;
+}
+
+.intro-heart {
+    color: var(--rose);
+    font-size: 32px;
+    margin-bottom: 20px;
+    animation: heartbeat 2s infinite;
+}
+
+@keyframes heartbeat {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.17); }
+}
+
+.intro h1 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 400;
+    font-size: clamp(45px, 7vw, 78px);
+    line-height: 1.2;
+}
+
+.intro h1 em {
+    color: var(--rose);
+}
+
+.intro-subtitle {
+    font-family: 'Caveat', cursive;
+    font-size: 27px;
+    color: #ae7c86;
+    margin-top: 18px;
+}
+
+.intro-text {
+    max-width: 480px;
+    color: #9d8185;
+    font-size: 14px;
+    line-height: 2;
+    margin-top: 20px;
+}
+
+.scroll-link {
+    margin-top: 35px;
+    color: var(--rose);
+    text-decoration: none;
+    font-size: 12px;
+    letter-spacing: 1px;
+}
+
+.scroll-link span {
+    display: block;
+    font-size: 22px;
+    margin-top: 10px;
+    animation: float 1.5s infinite;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(7px); }
+}
+
+/* MEMORIES INTRO */
+
+.memories-intro {
+    text-align: center;
+    background: #fffaf7;
+}
+
+.center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.center .section-description {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* PHOTO GALLERY */
+
+.gallery {
+    background: #fffaf7;
+    padding-top: 35px;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 35px;
+    max-width: 1050px;
+    margin: 0 auto;
+}
+
+.polaroid {
+    background: white;
+    padding: 12px 12px 20px;
+    box-shadow: 0 8px 30px #79555b13;
+    transform: rotate(-2deg);
+    transition: .4s ease;
+    cursor: pointer;
+    border: 1px solid #f4e9e5;
+}
+
+.polaroid:nth-child(even) {
+    transform: rotate(2deg);
+    margin-top: 28px;
+}
+
+.polaroid:hover {
+    transform: rotate(0deg) translateY(-9px);
+    box-shadow: 0 18px 35px #79555b20;
+}
+
+.photo {
+    width: 100%;
+    height: 230px;
+    object-fit: cover;
+    display: block;
+    background: linear-gradient(135deg, #f3d9d9, #f9e9dc);
+}
+
+.photo-caption {
+    font-family: 'Caveat', cursive;
+    font-size: 23px;
+    text-align: center;
+    color: #956d77;
+    margin-top: 15px;
+}
+
+.photo-date {
+    text-align: center;
+    font-size: 10px;
+    letter-spacing: 1px;
+    color: #bd9a9c;
+    margin-top: 4px;
+}
+
+/* TIMELINE */
+
+.timeline-section {
+    background: #f9e9e7;
+}
+
+.timeline-heading {
+    text-align: center;
+    margin-bottom: 70px;
+}
+
+.timeline {
+    max-width: 780px;
+    margin: auto;
+    position: relative;
+}
+
+.timeline::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    width: 1px;
+    background: #dcb8bd;
+}
+
+.timeline-item {
+    width: 50%;
+    position: relative;
+    padding: 0 45px 65px;
+}
+
+.timeline-item:nth-child(even) {
+    margin-left: 50%;
+}
+
+.timeline-item::after {
+    content: "♡";
+    position: absolute;
+    top: 0;
+    right: -12px;
+    width: 24px;
+    height: 24px;
+    background: #f9e9e7;
+    color: var(--rose);
+    text-align: center;
+    font-size: 19px;
+    z-index: 2;
+}
+
+.timeline-item:nth-child(even)::after {
+    left: -12px;
+    right: auto;
+}
+
+.timeline-date {
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--rose);
+    margin-bottom: 12px;
+}
+
+.timeline-item h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 25px;
+    font-weight: 400;
+    margin-bottom: 10px;
+}
+
+.timeline-item p {
+    font-size: 13px;
+    color: #997d82;
+    line-height: 1.9;
+}
+
+/* LITTLE THINGS */
+
+.little-things {
+    background: #fffaf7;
+    text-align: center;
+}
+
+.things-grid {
+    max-width: 1000px;
+    margin: 55px auto 0;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+}
+
+.thing-card {
+    background: #fff;
+    border: 1px solid #f1e4e2;
+    padding: 38px 22px;
+    border-radius: 4px;
+    transition: .3s;
+}
+
+.thing-card:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 12px 30px #a57d7d14;
+}
+
+.thing-icon {
+    font-size: 28px;
+    color: var(--rose);
+    margin-bottom: 18px;
+}
+
+.thing-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 21px;
+    font-weight: 400;
+    margin-bottom: 12px;
+}
+
+.thing-card p {
+    font-size: 13px;
+    color: var(--muted);
+    line-height: 1.9;
+}
+
+/* LETTER SECTION */
+
+.letter-section {
+    background: #f8e9e6;
+    text-align: center;
+}
+
+.envelope {
+    max-width: 510px;
+    margin: 45px auto 0;
+    padding: 45px 35px;
+    background: #fffaf4;
+    border: 1px solid #ead4d1;
+    box-shadow: 0 15px 45px #946d6d13;
+    position: relative;
+}
+
+.envelope-icon {
+    font-size: 38px;
+    color: var(--rose);
+    margin-bottom: 18px;
+}
+
+.envelope h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 27px;
+    font-weight: 400;
+    margin-bottom: 12px;
+}
+
+.envelope p {
+    color: var(--muted);
+    font-size: 13px;
+    line-height: 1.9;
+}
+
+.open-letter {
+    background: var(--rose);
+    color: white;
+    border: none;
+    padding: 14px 30px;
+    border-radius: 40px;
+    margin-top: 25px;
+    cursor: pointer;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 12px;
+    transition: .3s;
+}
+
+.open-letter:hover {
+    background: #a56575;
+    transform: translateY(-3px);
+}
+
+/* LETTER MODAL */
+
+.letter-modal,
+.photo-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 200;
+    background: #38262dbb;
+    backdrop-filter: blur(8px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    opacity: 0;
+    visibility: hidden;
+    transition: .35s;
+}
+
+.letter-modal.active,
+.photo-modal.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.letter-paper {
+    background: #fffaf0;
+    width: 100%;
+    max-width: 540px;
+    max-height: 85vh;
+    overflow-y: auto;
+    padding: 45px 40px;
+    box-shadow: 0 20px 70px #24131c55;
+    transform: translateY(20px);
+    transition: .4s;
+    position: relative;
+}
+
+.letter-modal.active .letter-paper,
+.photo-modal.active .photo-view {
+    transform: translateY(0);
+}
+
+.letter-paper h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 33px;
+    font-weight: 400;
+    color: #79545b;
+    margin-bottom: 25px;
+}
+
+.handwritten {
+    font-family: 'Caveat', cursive;
+    font-size: 22px;
+    line-height: 1.75;
+    color: #87666b;
+    white-space: pre-line;
+}
+
+.signature {
+    text-align: right;
+    font-family: 'Caveat', cursive;
+    font-size: 25px;
+    color: var(--rose);
+    margin-top: 30px;
+}
+
+.close {
+    position: absolute;
+    right: 17px;
+    top: 12px;
+    border: none;
+    background: transparent;
+    color: #a77c83;
+    font-size: 25px;
+    cursor: pointer;
+}
+
+/* PHOTO LIGHTBOX */
+
+.photo-view {
+    max-width: 700px;
+    width: 100%;
+    background: #fffaf7;
+    padding: 15px 15px 25px;
+    text-align: center;
+    transform: translateY(20px);
+    transition: .4s;
+    position: relative;
+}
+
+.photo-view img {
+    width: 100%;
+    max-height: 65vh;
+    object-fit: contain;
+}
+
+.photo-view p {
+    font-family: 'Caveat', cursive;
+    font-size: 25px;
+    color: var(--rose);
+    margin-top: 15px;
+}
+
+/* FOOTER */
+
+footer {
+    background: #6a4b54;
+    padding: 55px 20px;
+    text-align: center;
+    color: #fceeee;
+}
+
+footer h2 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 400;
+    font-size: 30px;
+}
+
+footer p {
+    font-family: 'Caveat', cursive;
+    font-size: 21px;
+    color: #e8c3c9;
+    margin-top: 13px;
+}
+
+.footer-heart {
+    color: #e6aab5;
+    font-size: 22px;
+    margin-top: 20px;
+}
+
+/* RESPONSIVE */
+
+@media(max-width: 750px) {
+    section {
+        padding: 70px 6%;
+    }
+
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 22px;
+    }
+
+    .photo {
+        height: 190px;
+    }
+
+    .things-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .timeline-item {
+        padding: 0 25px 55px;
+    }
+}
+
+@media(max-width: 480px) {
+    nav {
+        padding: 0 5%;
+        height: 65px;
+    }
+
+    .logo {
+        font-size: 17px;
+    }
+
+    .nav-note {
+        font-size: 16px;
+    }
+
+    .intro {
+        min-height: 490px;
+        padding: 75px 22px;
+    }
+
+    .gallery-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 15px;
+    }
+
+    .polaroid {
+        padding: 7px 7px 14px;
+    }
+
+    .photo {
+        height: 155px;
+    }
+
+    .photo-caption {
+        font-size: 19px;
+    }
+
+    .timeline::before {
+        left: 8px;
+    }
+
+    .timeline-item,
+    .timeline-item:nth-child(even) {
+        width: 100%;
+        margin-left: 0;
+        padding: 0 0 45px 35px;
+    }
+
+    .timeline-item::after,
+    .timeline-item:nth-child(even)::after {
+        left: -3px;
+        right: auto;
+    }
+
+    .things-grid {
+        grid-template-columns: 1fr;
+        gap: 14px;
+    }
+
+    .letter-paper {
+        padding: 40px 24px;
+    }
+
+    .handwritten {
+        font-size: 20px;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="progress" id="progress"></div>
+
+<nav>
+    <div class="logo">Our Little Universe <span>♡</span></div>
+    <div class="nav-note">Just for us...</div>
+</nav>
+
+<!-- SECTION 1: INTRO -->
+
+<section class="intro">
+
+    <div class="intro-heart">♡</div>
+
+    <p class="section-label">A little trip down memory lane</p>
+
+    <h1>Our Little <em>Universe</em></h1>
+
+    <div class="intro-subtitle">
+        Some moments deserve to be kept forever.
+    </div>
+
+    <p class="intro-text">
+        If I could collect all the little moments that made me
+        smile, laugh, and feel grateful, they would probably
+        fill an entire universe. But for now, I saved a few
+        of my favorites here.
+    </p>
+
+    <a href="#memories" class="scroll-link">
+        Let's take a look at our memories
+        <span>↓</span>
+    </a>
+
+</section>
+
+<!-- SECTION 2: MEMORIES INTRO -->
+
+<section class="memories-intro" id="memories">
+
+    <div class="center">
+
+        <p class="section-label">Chapter one · The memories</p>
+
+        <h2 class="section-heading">
+            Little moments,<br>
+            <em>big feelings.</em>
+        </h2>
+
+        <p class="section-description">
+            Some pictures are just pictures.
+            And then there are the ones that take you
+            right back to a moment, a feeling, and a smile.
+            These are a few of mine.
+        </p>
+
+    </div>
+
+</section>
+
+<!-- SECTION 3: PHOTO GALLERY -->
+
+<section class="gallery">
+
+    <div class="gallery-grid">
+
+        <!-- Replace image paths with your own pictures -->
+
+        <div class="polaroid"
+             onclick="openPhoto(this)">
+            <img class="photo"
+                 src="images/memory-1.jpg"
+                 alt="Our memory 1">
+            <div class="photo-caption">That beautiful day ♡</div>
+            <div class="photo-date">A MOMENT TO REMEMBER</div>
+        </div>
+
+        <div class="polaroid"
+             onclick="openPhoto(this)">
+            <img class="photo"
+                 src="images/memory-2.jpg"
+                 alt="Our memory 2">
+            <div class="photo-caption">One of my favorites</div>
+            <div class="photo-date">A LITTLE HAPPINESS</div>
+        </div>
+
+        <div class="polaroid"
+             onclick="openPhoto(this)">
+            <img class="photo"
+                 src="images/memory-3.jpg"
+                 alt="Our memory 3">
+            <div class="photo-caption">Just us being us</div>
+            <div class="photo-date">SOMETHING SPECIAL</div>
+        </div>
+
+        <div class="polaroid"
+             onclick="openPhoto(this)">
+            <img class="photo"
+                 src="images/memory-4.jpg"
+                 alt="Our memory 4">
+            <div class="photo-caption">A smile I'll remember</div>
+            <div class="photo-date">A HAPPY MEMORY</div>
+        </div>
+
+        <div class="polaroid"
+             onclick="openPhoto(this)">
+            <img class="photo"
+                 src="images/memory-5.jpg"
+                 alt="Our memory 5">
+            <div class="photo-caption">My kind of happiness</div>
+            <div class="photo-date">FOREVER A FAVORITE</div>
+        </div>
+
+        <div class="polaroid"
+             onclick="openPhoto(this)">
+            <img class="photo"
+                 src="images/memory-6.jpg"
+                 alt="Our memory 6">
+            <div class="photo-caption">And many more...</div>
+            <div class="photo-date">TO BE CONTINUED ♡</div>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- PHOTO LIGHTBOX -->
+
+<div class="photo-modal" id="photoModal"
+     onclick="closePhotoOutside(event)">
+
+    <div class="photo-view">
+
+        <button class="close"
+                onclick="closePhoto()">×</button>
+
+        <img id="largePhoto" src="" alt="Memory">
+
+        <p id="largeCaption"></p>
+
+    </div>
+
+</div>
+
+<!-- SECTION 4: TIMELINE -->
+
+<section class="timeline-section">
+
+    <div class="timeline-heading">
+
+        <p class="section-label">Chapter two · The journey</p>
+
+        <h2 class="section-heading">
+            Every moment has<br>
+            <em>a story.</em>
+        </h2>
+
+        <p class="section-description" style="margin-left:auto;margin-right:auto;">
+            It's funny how some little moments become
+            such big parts of our hearts.
+        </p>
+
+    </div>
+
+    <div class="timeline">
+
+        <div class="timeline-item">
+
+            <div class="timeline-date">The beginning</div>
+
+            <h3>Where it all started</h3>
+
+            <p>
+                Sometimes I think about how one little
+                moment can turn into something so meaningful.
+                I'm glad our paths crossed.
+            </p>
+
+        </div>
+
+        <div class="timeline-item">
+
+            <div class="timeline-date">A special memory</div>
+
+            <h3>The moments that stayed</h3>
+
+            <p>
+                The conversations, the laughter, the random
+                little things. Somehow, they all became
+                memories I never want to forget.
+            </p>
+
+        </div>
+
+        <div class="timeline-item">
+
+            <div class="timeline-date">Somewhere along the way</div>
+
+            <h3>My favorite kind of days</h3>
+
+            <p>
+                The days that didn't need anything extraordinary
+                to be special. Just a little time, a little
+                happiness, and you.
+            </p>
+
+        </div>
+
+        <div class="timeline-item">
+
+            <div class="timeline-date">Today and beyond</div>
+
+            <h3>More memories to come</h3>
+
+            <p>
+                There are still so many beautiful moments
+                waiting to happen. And I hope life gives us
+                plenty of reasons to smile.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- SECTION 5: LITTLE THINGS -->
+
+<section class="little-things">
+
+    <p class="section-label">Chapter three · Little things</p>
+
+    <h2 class="section-heading">
+        Little things I <em>remember.</em>
+    </h2>
+
+    <p class="section-description"
+       style="margin-left:auto;margin-right:auto;">
+
+        It's not always the big things.
+        Sometimes it's the smallest details that
+        make someone unforgettable.
+    </p>
+
+    <div class="things-grid">
+
+        <div class="thing-card">
+
+            <div class="thing-icon">♡</div>
+
+            <h3>Your Smile</h3>
+
+            <p>
+                There's something about your smile
+                that makes even an ordinary day
+                feel a little brighter.
+            </p>
+
+        </div>
+
+        <div class="thing-card">
+
+            <div class="thing-icon">✧</div>
+
+            <h3>Your Little Ways</h3>
+
+            <p>
+                The little things you do without
+                even realizing how much they mean.
+            </p>
+
+        </div>
+
+        <div class="thing-card">
+
+            <div class="thing-icon">❀</div>
+
+            <h3>Your Presence</h3>
+
+            <p>
+                Sometimes just knowing you're there
+                is enough to make things feel better.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- SECTION 6: LETTER -->
+
+<section class="letter-section">
+
+    <p class="section-label">Chapter four · From my heart</p>
+
+    <h2 class="section-heading">
+        A few words,<br>
+        <em>just for you.</em>
+    </h2>
+
+    <p class="section-description"
+       style="margin-left:auto;margin-right:auto;">
+
+        There are some things that deserve more
+        than a quick message. So I wrote you a little letter.
+    </p>
+
+    <div class="envelope">
+
+        <div class="envelope-icon">✉</div>
+
+        <h3>A Letter For You</h3>
+
+        <p>
+            Written with love, filled with thoughts,
+            and meant for one very special person.
+        </p>
+
+        <button class="open-letter"
+                onclick="openLetter()">
+            Open Your Letter ♡
+        </button>
+
+    </div>
+
+</section>
+
+<!-- LETTER POPUP -->
+
+<div class="letter-modal" id="letterModal">
+
+    <div class="letter-paper">
+
+        <button class="close"
+                onclick="closeLetter()">×</button>
+
+        <h2>Dear You, ♡</h2>
+
+        <div class="handwritten">
+
+I don't know if words will ever be enough to explain how much you mean to me.
+
+But I hope you know that having you in my life is something I never take for granted.
+
+I hope you always find reasons to smile, even on the days when things aren't easy.
+
+I hope life is gentle with you. I hope your dreams find their way to you, and I hope you never stop believing in all the beautiful things you deserve.
+
+And most importantly, I hope you never forget how special you are.
+
+Thank you for being you.
+
+        </div>
+
+        <div class="signature">
+            With all my love, ♡
+        </div>
+
+    </div>
+
+</div>
+
+<!-- FOOTER -->
+
+<footer>
+
+    <h2>And this is just the beginning...</h2>
+
+    <p>
+        Some stories are too beautiful to end here. ♡
+    </p>
+
+    <div class="footer-heart">♡</div>
+
+</footer>
+
+<script>
+
+// SCROLL PROGRESS
+
+window.addEventListener("scroll", function() {
+
+    const scrollTop = window.scrollY;
+
+    const totalHeight =
+        document.documentElement.scrollHeight -
+        window.innerHeight;
+
+    const progress =
+        (scrollTop / totalHeight) * 100;
+
+    document.getElementById("progress")
+        .style.width = progress + "%";
+
+});
+
+// OPEN PHOTO
+
+function openPhoto(card) {
+
+    const img = card.querySelector("img");
+    const caption = card.querySelector(".photo-caption");
+
+    document.getElementById("largePhoto").src = img.src;
+
+    document.getElementById("largeCaption").innerText =
+        caption.innerText;
+
+    document.getElementById("photoModal")
+        .classList.add("active");
+
+}
+
+function closePhoto() {
+
+    document.getElementById("photoModal")
+        .classList.remove("active");
+
+}
+
+function closePhotoOutside(event) {
+
+    if (event.target.id === "photoModal") {
+        closePhoto();
+    }
+
+}
+
+// OPEN LETTER
+
+function openLetter() {
+
+    document.getElementById("letterModal")
+        .classList.add("active");
+
+}
+
+function closeLetter() {
+
+    document.getElementById("letterModal")
+        .classList.remove("active");
+
+}
+
+// CLOSE WITH ESCAPE KEY
+
+document.addEventListener("keydown", function(event) {
+
+    if (event.key === "Escape") {
+        closePhoto();
+        closeLetter();
+    }
+
+});
+
+</script>
+
+</body>
+</html>
